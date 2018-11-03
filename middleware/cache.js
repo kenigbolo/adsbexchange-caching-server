@@ -5,6 +5,7 @@ const cache = (duration) => {
     const key = '__express__' + req.originalUrl || req.url;
     const cachedBody = mcache.get(key);
     if (cachedBody) {
+      console.log('sending data from cache');
       res.send(cachedBody);
       return;
     } else {
